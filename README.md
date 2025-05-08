@@ -1,4 +1,4 @@
-# Geometric Shapes Library
+# Geometric Shapes Area Calculator
 
 Библиотека для вычисления площади геометрических фигур и выполнения различных операций с ними.
 
@@ -12,33 +12,23 @@
 
 ## Примеры использования
 
-### Круг
+### Базовое использование
 
 ```python
-from shapes import Circle
+from shape_area_calculator import Circle, Triangle, calculate_area
 
-# Вычисление площади круга
 circle = Circle(5)
-print(circle.area())  # 78.53981633974483
-```
+print(calculate_area(circle))  # Вывод: 78.53981633974483 (площадь круга с радиусом 5)
 
-### Треугольник
-
-```python
-from shapes import Triangle
-
-# Вычисление площади треугольника
 triangle = Triangle(3, 4, 5)
-print(triangle.area())  # 6.0
-
-# Проверка, является ли треугольник прямоугольным
-print(triangle.is_right())  # True
+print(calculate_area(triangle))  # Вывод: 6.0 (площадь треугольника со сторонами 3, 4, 5)
+print(triangle.is_right_triangle())  # Вывод: True (треугольник прямоугольный)
 ```
 
 ### Вычисление площади без знания типа фигуры
 
 ```python
-from shapes import Circle, Triangle, calculate_area
+from shape_area_calculator import Circle, Triangle, calculate_area
 
 # Создаем фигуры
 circle = Circle(5)
@@ -63,7 +53,7 @@ for shape in shapes:
 Пример добавления новой фигуры (прямоугольник):
 
 ```python
-from shapes import Shape
+from shape_area_calculator import Shape
 
 class Rectangle(Shape):
     def __init__(self, width, height):
